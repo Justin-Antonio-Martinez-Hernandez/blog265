@@ -3,48 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip to Bariloche | Our Blog</title>
+    <title>Bariloche Adventure | Our Team Trip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Open+Sans:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="audio-player">
+        <button id="musicBtn">🎵 Play Music</button>
+        <audio id="bgMusic" loop>
+            <source src="https://www.bensound.com/bensound-music/bensound-epic.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <header class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Our Unforgettable Trip to Argentina 🇦🇷❄️</h1>
+            <h1 class="glitch" data-text="ARGENTINA">ARGENTINA</h1>
+            <h2 class="subtitle">An Unforgettable Team Journey</h2>
             <p class="destination">📍 Bariloche, Río Negro</p>
-            <p class="authors">By: Justin, Alyson, Leila, Arturo, Eugenio & Ximena</p>
+            <div class="scroll-down"></div>
         </div>
     </header>
 
-    <main class="blog-container">
-        <article class="post">
-            <section class="text-content fade-in">
-                <h2>The Journey Begins</h2>
-                <p>Last winter, my team and I <strong>decided</strong> to visit Bariloche, Argentina. It <strong>was</strong> an amazing experience! We <strong>traveled</strong> by plane and <strong>arrived</strong> at the city early in the morning.</p>
-            </section>
+    <section class="authors-section fade-in">
+        <div class="container">
+            <p class="by-line">A Story Told By</p>
+            <div class="authors-grid">
+                <span>Justin</span> • <span>Alyson</span> • <span>Leila</span> • <span>Arturo</span> • <span>Eugenio</span> • <span>Ximena</span>
+            </div>
+        </div>
+    </section>
 
-            <img src="https://images.unsplash.com/photo-1548777123-e216912df7d8?q=80&w=1200&auto=format&fit=crop" alt="Beautiful mountains of Bariloche" class="blog-image fade-in">
+    <section class="blog-text fade-in">
+        <div class="container small-container">
+            <h3 class="section-title">The Arrival</h3>
+            <p>Last winter, my team and I <strong>decided</strong> to visit Bariloche, Argentina. It <strong>was</strong> an amazing experience! We <strong>traveled</strong> by plane and <strong>arrived</strong> at the city early in the morning.</p>
+        </div>
+    </section>
 
-            <section class="text-content fade-in">
-                <h2>Exploring the Landscapes</h2>
-                <p>During the trip, we <strong>saw</strong> the most beautiful landscapes; the mountains <strong>looked</strong> like something from a movie. We <strong>walked</strong> through the town and <strong>bought</strong> famous local chocolates. One afternoon, we <strong>went</strong> to Cerro Catedral and <strong>tried</strong> skiing for the first time. Some of us <strong>fell</strong> down, but we <strong>laughed</strong> a lot!</p>
-            </section>
+    <div class="parallax-img img-1"></div>
 
-            <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?q=80&w=1200&auto=format&fit=crop" alt="Skiing in the snow" class="blog-image fade-in">
+    <section class="blog-text fade-in">
+        <div class="container small-container">
+            <h3 class="section-title">Mountains & Snow</h3>
+            <p>During the trip, we <strong>saw</strong> the most beautiful landscapes; the mountains <strong>looked</strong> like something from a movie. We <strong>walked</strong> through the town and <strong>bought</strong> famous local chocolates.</p>
+            <p>One afternoon, we <strong>went</strong> to Cerro Catedral and <strong>tried</strong> skiing for the first time. Some of us <strong>fell</strong> down, but we <strong>laughed</strong> a lot!</p>
+        </div>
+    </section>
 
-            <section class="text-content fade-in">
-                <h2>Food and Memories</h2>
-                <p>We also <strong>took</strong> a boat tour across the Nahuel Huapi Lake. The water <strong>felt</strong> freezing, but the view <strong>was</strong> worth it. At night, we <strong>ate</strong> traditional Argentine steak and <strong>drank</strong> some local wine.</p>
-                <p>We <strong>loved</strong> this trip because we <strong>shared</strong> special moments and <strong>learned</strong> about a new culture. It <strong>was</strong> the best adventure we <strong>had</strong> together!</p>
-            </section>
-        </article>
-    </main>
+    <section class="gallery-section fade-in">
+        <div class="container">
+            <h3 class="section-title centered">Gallery of Memories</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1596122606822-6b3a323335e3?q=80&w=600" alt="Bariloche 1"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1620914690373-b3c99a6c905b?q=80&w=600" alt="Bariloche 2"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?q=80&w=600" alt="Skiing"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1590793616578-18e3c6604169?q=80&w=600" alt="Chocolate"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section fade-in">
+        <div class="container">
+            <h3 class="section-title centered">Cinematic Vibes</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/H08O6h995is" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-text fade-in">
+        <div class="container small-container">
+            <h3 class="section-title">Food and Farewell</h3>
+            <p>We also <strong>took</strong> a boat tour across the Nahuel Huapi Lake. The water <strong>felt</strong> freezing, but the view <strong>was</strong> worth it. At night, we <strong>ate</strong> traditional Argentine steak and <strong>drank</strong> some local wine.</p>
+            <div class="final-quote">
+                "We <strong>loved</strong> this trip because we <strong>shared</strong> special moments... It <strong>was</strong> the best adventure we <strong>had</strong> together!"
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>Created with 💙 for our English Class Project</p>
+        <div class="container">
+            <p>Created with Passion | Team Project 2024</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
- 

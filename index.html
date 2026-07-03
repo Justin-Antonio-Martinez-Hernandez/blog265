@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Tide</title>
+    <title>Quiz Hub</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="inicio" class="card">
-        <h1>Quiz del Mejor Amigo</h1>
-        <p>¿Qué tanto conoces el lore de Tide?</p>
-        <input type="text" id="nombre" placeholder="Ingresa tu nombre para jugar">
-        <button onclick="comenzar()">Comenzar Reto 🚀</button>
+    <div id="pantalla-seleccion" class="card active">
+        <h1>🎮 Elige un Quiz</h1>
+        <p>Selecciona de quién quieres responder el test:</p>
+        
+        <div class="opcion-quiz" onclick="seleccionarQuiz('tide')">
+            ✨ Quiz de TIDE
+        </div>
+        
+        <div class="opcion-quiz" onclick="seleccionarQuiz('juan')">
+            🔥 Quiz de Nayomi
+        </div>
     </div>
 
-    <div id="quiz" class="card" style="display: none;">
+    <div id="inicio" class="card hidden">
+        <h1 id="titulo-inicio">Quiz del Mejor Amigo</h1>
+        <p>¿Qué tanto conoces mi lore?</p>
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre para jugar">
+        <button onclick="comenzar()">Comenzar Reto 🚀</button>
+        <button onclick="volverASeleccion()" style="background: #666; margin-top: 10px; box-shadow: none;">⬅️ Volver</button>
+    </div>
+
+    <div id="quiz" class="card hidden">
         <div class="progress-container">
             <div id="progress-bar"></div>
         </div>
@@ -25,17 +39,17 @@
         <h2 id="pregunta"></h2>
         <div id="opciones"></div>
         
-        <p id="error-msg" style="display: none; color: #ff2d55; font-weight: 600; margin-top: 15px;">¡Selecciona una opción primero!</p>
+        <p id="error-msg" class="hidden">¡Selecciona una opción primero!</p>
         
         <button onclick="siguiente()">Siguiente ➔</button>
     </div>
 
-    <div id="final" class="card" style="display: none;">
+    <div id="final" class="card hidden">
         <h1 id="resultado"></h1>
         <h2 id="mensaje"></h2>
         
         <div class="screenshot-box">
-            <p class="grande-aviso">📸 ¡Toma screenshot y envíaselo a tu amigo!</p>
+            <p class="grande">📸 ¡Toma screenshot y envíaselo a tu amigo!</p>
         </div>
 
         <div id="apartado-crear">
@@ -48,7 +62,7 @@
             <textarea id="crear-ideas" placeholder="Escribe o pega aquí todas las preguntas y respuestas para tu quiz..." rows="5"></textarea>
             
             <button id="btn-enviar-crear" onclick="enviarPeticionQuiz()">¡Quiero mi Quiz! ✉️</button>
-            <p id="crear-status" style="display: none; font-weight: 600; margin-top: 10px;"></p>
+            <p id="crear-status" class="hidden"></p>
         </div>
     </div>
 

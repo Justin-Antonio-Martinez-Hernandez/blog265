@@ -108,3 +108,56 @@ function mostrarFinal() {
 
     document.getElementById("mensaje").innerHTML = msg;
 }
+
+// 1. Inicializa EmailJS con tu Public Key (Búscala en Account -> Public Key en EmailJS)
+// Reemplaza "TU_PUBLIC_KEY_AQUI" por tu clave real
+emailjs.init("WHqOPUlHcTTxGIlHt"); 
+
+function enviarSugerencia() {
+    const preguntaInput = document.getElementById("sug-pregunta").value.trim();
+    const opcionesInput = document.getElementById("sug-opciones").value.trim();
+    const respuestaInput = document.getElementById("sug-respuesta").value.trim();
+    const statusMsg = document.getElementById("sug-status");
+    const btnEnviar = document.getElementById("btn-enviar-sug");
+
+    // Validar que no envíen campos vacíos
+    if (!preguntaInput || !opcionesInput || !respuestaInput) {
+        statusMsg.textContent = "⚠️ ¡Por favor llena todos los campos!";
+        statusMsg.style.color = "#ff2d55";
+        statusMsg.classList.remove("hidden");
+        return;
+    }
+
+    // Cambiar estado del botón mientras envía
+    btnEnviar.textContent = "Enviando... ⏳";
+    btnEnviar.disabled = true;
+
+    // Preparar los datos tal y como los pusiste en la plantilla de EmailJS
+    const params = {
+        pregunta: preguntaInput,
+        opciones: opcionesInput,
+        respuesta: respuestaInput
+    };
+
+    // Reemplaza "TU_TEMPLATE_ID_AQUI" por el ID de la plantilla que creaste en el Paso 1
+    emailjs.send("service_pe2zkw8", "template_fvxf22g", params)
+        .then(() => {
+            statusMsg.textContent = "🚀 ¡Pregunta enviada con éxito!";
+            statusMsg.style.color = "#10ac84";
+            statusMsg.classList.remove("hidden");
+            
+            // Limpiar los inputs
+            document.getElementById("sug-pregunta").value = "";
+            document.getElementById("sug-opciones").value = "";
+            document.getElementById("sug-respuesta").value = "";
+            btnEnviar.textContent = "¡Enviado! ✅";
+        })
+        .catch((error) => {
+            console.error("Error de EmailJS:", error);
+            statusMsg.textContent = "❌ Hubo un error al enviar. Intenta de nuevo.";
+            statusMsg.style.color = "#ff2d55";
+            statusMsg.classList.remove("hidden");
+            btnEnviar.textContent = "Enviar a Tide ✉️";
+            btnEnviar.disabled = false;
+        });
+}

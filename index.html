@@ -35,6 +35,18 @@
         
         <div class="screenshot-box">
             <p class="grande">📸 ¡Toma screenshot y envíaselo a tu amigo!</p>
+            <div id="apartado-crear" style="margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px;">
+            <h3>🎮 ¿Quieres tu propio Quiz?</h3>
+            <p style="font-size: 0.9rem; color: #777;">Mándame un mensaje con tus ideas o pega tus preguntas aquí y te armo uno.</p>
+            
+            <input type="text" id="crear-nombre" placeholder="Tu nombre o apodo">
+            <input type="text" id="crear-contacto" placeholder="Tu Instagram o WhatsApp para pasarte el link">
+            
+            <textarea id="crear-ideas" placeholder="Escribe o pega aquí todas las preguntas y respuestas para tu quiz..." rows="5" style="width: 100%; padding: 15px; font-size: 16px; border: 2px solid #ddd; border-radius: 12px; margin-bottom: 20px; outline: none; font-family: 'Poppins', sans-serif; resize: vertical;"></textarea>
+            
+            <button id="btn-enviar-crear" onclick="enviarPeticionQuiz()">¡Quiero mi Quiz! ✉️</button>
+            <p id="crear-status" class="hidden" style="margin-top: 10px; font-weight: 600;"></p>
+        </div>
         </div>
     </div>
 

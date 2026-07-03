@@ -1,55 +1,167 @@
-body{
-font-family:Arial;
-background:#6c63ff;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:15px;
-width:90%;
-max-width:500px;
-text-align:center;
+body {
+    /* Degradado de fondo más dinámico */
+    background: linear-gradient(135deg, #6c63ff 0%, #3b31c2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
 }
 
-button{
-margin-top:20px;
-padding:12px 25px;
-font-size:18px;
-cursor:pointer;
+.card {
+    background: rgba(255, 255, 255, 0.97);
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    /* Animación de entrada */
+    animation: fadeIn 0.6s ease forwards;
 }
 
-input{
-padding:12px;
-width:90%;
-font-size:18px;
+/* Clases utilitarias para mostrar/ocultar con JS */
+.hidden {
+    display: none !important;
 }
 
-.opcion{
-display:block;
-margin:10px;
-padding:10px;
-border:1px solid #aaa;
-border-radius:8px;
-cursor:pointer;
+.active {
+    display: block;
 }
 
-.opcion:hover{
-background:#eee;
+h1 {
+    color: #2c2c2c;
+    margin-bottom: 10px;
+    font-weight: 800;
 }
 
-.seleccionada{
-background:#6c63ff;
-color:white;
+h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #444;
 }
 
-.grande{
-margin-top:30px;
-font-size:34px;
-color:#ff2d55;
+p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #6c63ff;
+}
+
+button {
+    background: #ff2d55;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, background 0.3s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 45, 85, 0.3);
+}
+
+button:hover {
+    background: #e0264a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 45, 85, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.opcion {
+    display: block;
+    margin: 12px 0;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 16px;
+    background: white;
+    font-weight: 500;
+}
+
+.opcion:hover {
+    background: #f8f8ff;
+    border-color: #6c63ff;
+    transform: scale(1.02);
+}
+
+.seleccionada {
+    background: #6c63ff !important;
+    color: white;
+    border-color: #6c63ff;
+    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* Estilos de la barra de progreso */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #eee;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    background: #10ac84; /* Verde llamativo */
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+#error-msg {
+    color: #ff2d55;
+    font-size: 0.95rem;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+/* Caja de captura de pantalla */
+.screenshot-box {
+    background: #fff0f3;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 2px dashed #ff2d55;
+}
+
+.grande {
+    font-size: 1.1rem;
+    color: #ff2d55;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Animación principal */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

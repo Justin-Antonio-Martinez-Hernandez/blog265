@@ -23,16 +23,31 @@ const bancoDeQuizes = {
         ]
     },
     // AQUÍ AGREGASTE EL NUEVO QUIZ DE TU AMIGO (Ejemplo: Juan)
-    juan: {
-        creador: "Nayomi",
+    nayomi: {
+        creador: "Nayomi", // Cambia "Juan" por el nombre real de tu amigo
         preguntas: [
-            { p: "¿Cuál es mi comida favorita?", o: ["Pizza", "Hamburguesas", "Tacos", "Sushi"], r: 2 },
-            { p: "¿Qué color me gusta más?", o: ["Rojo", "Azul", "Negro", "Verde"], r: 1 },
-            { p: "¿A qué hora me suelo dormir?", o: ["10 PM", "12 AM", "2 AM", "No duermo"], r: 2 }
-            // Puedes meter aquí todas las preguntas que te mande Juan
+            { p: "¿Cuál es mi comida favorita?", o: ["Pizza", "Sushi", "Tacos al pastor", "Hamburguesas"], r: 1 }, // Sushi es 1
+            { p: "¿Qué hago cuando me aburro?", o: ["Escuchar música", "Jugar videojuegos", "Ver series", "Dormir"], r: 2 }, // Ver series es 2
+            { p: "¿Qué tipo de música escucho más?", o: ["Jazz", "Pop", "Indie", "Lo-fi"], r: 0 }, // Jazz es 0
+            { p: "¿Cuál es mi serie, anime o película favorita?", o: ["Jujutsu Kaisen", "Attack on Titan", "Chainsaw Man", "Dandadan"], r: 3 }, // Dandadan es 3
+            { p: "¿Qué es algo que siempre digo?", o: ["No puede ser", "JAKAKAKA", "Qué flojera", "Literal"], r: 1 }, // JAKAKAKA es 1
+            { p: "¿Qué me da mucha risa?", o: ["Memes absurdos", "Videos de gatos", "Ver aldoxito", "TikToks de bromas"], r: 2 }, // Ver aldoxito es 2
+            { p: "¿Cuál es mi snack favorito?", o: ["Doritos Nacho", "Takis Fuego", "Papas Adobadas", "Chetos que pican"], r: 3 }, // Chetos que pican es 3
+            { p: "¿Qué tipo de dulces prefiero?", o: ["Chocolate", "Gomitas", "Paletas", "Caramelos"], r: 1 }, // Gomitas es 1
+            { p: "¿Qué hago cuando tengo tiempo libre?", o: ["Ver TikTok", "Escuchar música", "Ver YouTube", "Salir a caminar"], r: 0 }, // Ver TikTok es 0
+            { p: "¿Qué hago primero cuando agarro el celular?", o: ["Abrir TikTok", "Revisar Instagram", "Ver la hora", "Ver mensajes"], r: 3 }, // Ver mensajes es 3
+            { p: "¿Cuál es mi sabor de helado favorito?", o: ["Vainilla", "Chocolate", "Fresas con crema", "Oreo"], r: 1 }, // Chocolate es 1
+            { p: "¿Cuál es mi bebida favorita?", o: ["Coca-Cola", "Sprite", "Pepsi", "Té helado"], r: 2 }, // Pepsi es 2
+            { p: "¿Qué comida definitivamente no me gusta?", o: ["Menudo", "Hígado", "Mariscos", "Brócoli"], r: 0 }, // Menudo es 0
+            { p: "¿Qué red social uso más?", o: ["Instagram", "TikTok", "Facebook", "X (Twitter)"], r: 1 }, // TikTok es 1
+            { p: "¿Qué me gusta hacer un fin de semana?", o: ["Dormir todo el día", "Ver películas", "Salir", "Jugar videojuegos"], r: 2 }, // Salir es 2
+            { p: "¿Qué canción o artista escucho seguido?", o: ["Beabadoobee", "Laufey", "Mitski", "Billie Eilish"], r: 1 }, // Laufey es 1
+            { p: "¿Qué tipo de clima prefiero para salir?", o: ["Soleado", "Nublado", "Frío", "Lluvioso"], r: 3 }, // Lluvioso es 3
+            { p: "¿Qué es algo que siempre digo que voy a hacer pero luego se me olvida?", o: ["La animación", "Hacer ejercicio", "Ordenar mi cuarto", "Dormirme temprano"], r: 0 }, // La animación es 0
+            { p: "¿Cuál es mi bebida favorita cuando hace calor?", o: ["Agua de limón", "Té helado", "Coca con mucho hielo", "Frappé de café"], r: 2 }, // Coca con mucho hielo es 2
+            { p: "¿Qué cosa pequeña me pone de buen humor?", o: ["Que me manden memes", "Encontrar dinero en un bolsillo", "Que me inviten una Pepsi bien fría", "Que me compren cosas"], r: 3 } // Que me compren cosas es 3
         ]
     }
-};
 
 // Variables de estado del juego globales
 let quizActivo = null;

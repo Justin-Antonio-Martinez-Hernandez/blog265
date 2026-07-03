@@ -6,7 +6,7 @@
 }
 
 body {
-    /* Degradado de fondo más dinámico */
+    /* Degradado de fondo dinámico */
     background: linear-gradient(135deg, #6c63ff 0%, #3b31c2 100%);
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ body {
 }
 
 .active {
-    display: block;
+    display: block !important; /* Añadido !important para evitar bloqueos de caché */
 }
 
 h1 {

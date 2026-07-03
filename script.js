@@ -111,7 +111,7 @@ function mostrarFinal() {
 
 // 1. Inicializa EmailJS con tu Public Key (Búscala en Account -> Public Key en EmailJS)
 // Reemplaza "TU_PUBLIC_KEY_AQUI" por tu clave real
-emailjs.init("WHqOPUlHcTTxGIlHt"); 
+ emailjs.init("WHqOPUlHcTTxGIlHt"); 
 
 function enviarPeticionQuiz() {
     const nombreInput = document.getElementById("crear-nombre").value.trim();

@@ -22,6 +22,9 @@ let i = 0;
 let score = 0;
 let seleccion = -1;
 
+// Inicializa EmailJS con tu Clave Pública Real
+emailjs.init("WHqOPUlHcTTxGIlHt"); 
+
 function comenzar() {
     const nombreInput = document.getElementById("nombre");
     
@@ -31,23 +34,30 @@ function comenzar() {
         return;
     }
 
-    document.getElementById("inicio").classList.replace("active", "hidden");
-    document.getElementById("quiz").classList.replace("hidden", "active");
+    // CORREGIDO: Uso de style.display compatible con tu HTML actual
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
     mostrar();
 }
 
 function mostrar() {
     const q = preguntas[i];
     
-    const progreso = ((i) / preguntas.length) * 100;
-    document.getElementById("progress-bar").style.width = progreso + "%";
+    // Si tienes barra de progreso en el HTML la actualiza, si no, no interrumpe el flujo
+    const progressBar = document.getElementById("progress-bar");
+    if (progressBar) {
+        const progreso = ((i) / preguntas.length) * 100;
+        progressBar.style.width = progreso + "%";
+    }
 
     document.getElementById("pregunta").innerHTML = 
         `<span style="color:#6c63ff; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px;">Pregunta ${i + 1} de ${preguntas.length}</span><br><br>${q.p}`;
 
     let html = "";
     seleccion = -1; 
-    document.getElementById("error-msg").classList.add("hidden");
+    
+    const errorMsg = document.getElementById("error-msg");
+    if (errorMsg) errorMsg.style.display = "none";
 
     q.o.forEach((op, index) => {
         html += `<div class="opcion" onclick="select(${index}, this)">${op}</div>`;
@@ -58,7 +68,9 @@ function mostrar() {
 
 function select(index, el) {
     seleccion = index;
-    document.getElementById("error-msg").classList.add("hidden");
+    
+    const errorMsg = document.getElementById("error-msg");
+    if (errorMsg) errorMsg.style.display = "none";
 
     document.querySelectorAll(".opcion").forEach(x => {
         x.classList.remove("seleccionada");
@@ -69,7 +81,8 @@ function select(index, el) {
 
 function siguiente() {
     if (seleccion === -1) {
-        document.getElementById("error-msg").classList.remove("hidden");
+        const errorMsg = document.getElementById("error-msg");
+        if (errorMsg) errorMsg.style.display = "block";
         return;
     }
 
@@ -80,7 +93,9 @@ function siguiente() {
     i++;
 
     if (i >= preguntas.length) {
-        document.getElementById("progress-bar").style.width = "100%";
+        const progressBar = document.getElementById("progress-bar");
+        if (progressBar) progressBar.style.width = "100%";
+        
         setTimeout(mostrarFinal, 300); 
         return;
     }
@@ -89,8 +104,9 @@ function siguiente() {
 }
 
 function mostrarFinal() {
-    document.getElementById("quiz").classList.replace("active", "hidden");
-    document.getElementById("final").classList.replace("hidden", "active");
+    // CORREGIDO: Uso de style.display en lugar de classList.replace
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("final").style.display = "block";
 
     document.getElementById("resultado").innerHTML = `Tu resultado: ${score} / ${preguntas.length}`;
 
@@ -109,10 +125,6 @@ function mostrarFinal() {
     document.getElementById("mensaje").innerHTML = msg;
 }
 
-// 1. Inicializa EmailJS con tu Public Key (Búscala en Account -> Public Key en EmailJS)
-// Reemplaza "TU_PUBLIC_KEY_AQUI" por tu clave real
- emailjs.init("WHqOPUlHcTTxGIlHt"); 
-
 function enviarPeticionQuiz() {
     const nombreInput = document.getElementById("crear-nombre").value.trim();
     const contactoInput = document.getElementById("crear-contacto").value.trim();
@@ -120,33 +132,28 @@ function enviarPeticionQuiz() {
     const statusMsg = document.getElementById("crear-status");
     const btnEnviar = document.getElementById("btn-enviar-crear");
 
-    // Validar que no envíen campos vacíos
     if (!nombreInput || !contactoInput || !ideasInput) {
         statusMsg.textContent = "⚠️ ¡Por favor llena todos los datos para saber quién eres!";
         statusMsg.style.color = "#ff2d55";
-        statusMsg.classList.remove("hidden");
+        statusMsg.style.display = "block";
         return;
     }
 
-    // Cambiar estado del botón mientras envía
     btnEnviar.textContent = "Enviando... ⏳";
     btnEnviar.disabled = true;
 
-    // Estos son los nombres de las variables que usaremos en la plantilla
     const params = {
         nombre_amigo: nombreInput,
         contacto_amigo: contactoInput,
         ideas_quiz: ideasInput
     };
 
-    // Reemplaza "TU_TEMPLATE_ID_AQUI" por el ID de la plantilla
     emailjs.send("service_pe2zkw8", "template_fvxf22g", params)
         .then(() => {
             statusMsg.textContent = "🚀 ¡Petición enviada! Te contactaré pronto.";
             statusMsg.style.color = "#10ac84";
-            statusMsg.classList.remove("hidden");
+            statusMsg.style.display = "block";
             
-            // Limpiar los inputs
             document.getElementById("crear-nombre").value = "";
             document.getElementById("crear-contacto").value = "";
             document.getElementById("crear-ideas").value = "";
@@ -156,7 +163,7 @@ function enviarPeticionQuiz() {
             console.error("Error de EmailJS:", error);
             statusMsg.textContent = "❌ Hubo un error al enviar. Intenta de nuevo.";
             statusMsg.style.color = "#ff2d55";
-            statusMsg.classList.remove("hidden");
+            statusMsg.style.display = "block";
             btnEnviar.textContent = "¡Quiero mi Quiz! ✉️";
             btnEnviar.disabled = false;
         });

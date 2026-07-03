@@ -1,6 +1,6 @@
 const preguntas = [
     { p: "¿Cual fue el primer juego que intenté crear?", o: ["Void Engine", "Pixel Wars", "Hallucinations", "Project Genesis"], r: 2 },
-    { p: "¿Qué es algo que siempre digo que voy a terminar?", o: ["El motor gráfico en C++", "La animación de JJK", "El guion del ARG", "Un clon de Hollow Knight"], r: 1 },
+    { p: "¿Que es algo que siempre digo que voy a terminar?", o: ["El motor gráfico en C++", "La animación de JJK", "El guion del ARG", "Un clon de Hollow Knight"], r: 1 },
     { p: "¿Qué personaje uso más en Free Fire?", o: ["Moco", "Hayato", "Alok", "Kassie"], r: 3 },
     { p: "¿Qué cosa siempre digo que voy a aprender, pero sigo posponiendo?", o: ["Modelado 3D en Blender", "Cálculo multivariable", "C++ avanzado", "Temas de física de universidad"], r: 3 },
     { p: "¿Cuál ha sido el bug más raro que me ha pasado?", o: ["El motor de físicas colapsaba al fotograma 60", "Una animación no se reproducía aunque estaba bien configurada", "Los shaders invertían los canales RGB al compilar", "La memoria se llenaba por un bucle invisible"], r: 1 },

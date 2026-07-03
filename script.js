@@ -113,16 +113,16 @@ function mostrarFinal() {
 // Reemplaza "TU_PUBLIC_KEY_AQUI" por tu clave real
 emailjs.init("WHqOPUlHcTTxGIlHt"); 
 
-function enviarSugerencia() {
-    const preguntaInput = document.getElementById("sug-pregunta").value.trim();
-    const opcionesInput = document.getElementById("sug-opciones").value.trim();
-    const respuestaInput = document.getElementById("sug-respuesta").value.trim();
-    const statusMsg = document.getElementById("sug-status");
-    const btnEnviar = document.getElementById("btn-enviar-sug");
+function enviarPeticionQuiz() {
+    const nombreInput = document.getElementById("crear-nombre").value.trim();
+    const contactoInput = document.getElementById("crear-contacto").value.trim();
+    const ideasInput = document.getElementById("crear-ideas").value.trim();
+    const statusMsg = document.getElementById("crear-status");
+    const btnEnviar = document.getElementById("btn-enviar-crear");
 
     // Validar que no envíen campos vacíos
-    if (!preguntaInput || !opcionesInput || !respuestaInput) {
-        statusMsg.textContent = "⚠️ ¡Por favor llena todos los campos!";
+    if (!nombreInput || !contactoInput || !ideasInput) {
+        statusMsg.textContent = "⚠️ ¡Por favor llena todos los datos para saber quién eres!";
         statusMsg.style.color = "#ff2d55";
         statusMsg.classList.remove("hidden");
         return;
@@ -132,24 +132,24 @@ function enviarSugerencia() {
     btnEnviar.textContent = "Enviando... ⏳";
     btnEnviar.disabled = true;
 
-    // Preparar los datos tal y como los pusiste en la plantilla de EmailJS
+    // Estos son los nombres de las variables que usaremos en la plantilla
     const params = {
-        pregunta: preguntaInput,
-        opciones: opcionesInput,
-        respuesta: respuestaInput
+        nombre_amigo: nombreInput,
+        contacto_amigo: contactoInput,
+        ideas_quiz: ideasInput
     };
 
-    // Reemplaza "TU_TEMPLATE_ID_AQUI" por el ID de la plantilla que creaste en el Paso 1
+    // Reemplaza "TU_TEMPLATE_ID_AQUI" por el ID de la plantilla
     emailjs.send("service_pe2zkw8", "template_fvxf22g", params)
         .then(() => {
-            statusMsg.textContent = "🚀 ¡Pregunta enviada con éxito!";
+            statusMsg.textContent = "🚀 ¡Petición enviada! Te contactaré pronto.";
             statusMsg.style.color = "#10ac84";
             statusMsg.classList.remove("hidden");
             
             // Limpiar los inputs
-            document.getElementById("sug-pregunta").value = "";
-            document.getElementById("sug-opciones").value = "";
-            document.getElementById("sug-respuesta").value = "";
+            document.getElementById("crear-nombre").value = "";
+            document.getElementById("crear-contacto").value = "";
+            document.getElementById("crear-ideas").value = "";
             btnEnviar.textContent = "¡Enviado! ✅";
         })
         .catch((error) => {
@@ -157,7 +157,7 @@ function enviarSugerencia() {
             statusMsg.textContent = "❌ Hubo un error al enviar. Intenta de nuevo.";
             statusMsg.style.color = "#ff2d55";
             statusMsg.classList.remove("hidden");
-            btnEnviar.textContent = "Enviar a Tide ✉️";
+            btnEnviar.textContent = "¡Quiero mi Quiz! ✉️";
             btnEnviar.disabled = false;
         });
 }

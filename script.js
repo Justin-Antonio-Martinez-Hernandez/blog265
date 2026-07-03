@@ -88,7 +88,7 @@ function siguiente() {
     if (i >= preguntas.length) {
         // Llenar la barra al 100% al finalizar
         document.getElementById("progress-bar").style.width = "100%";
-        setTimeout(mostrarFinal, 300); // Pequeño retraso para que se vea la barra llena
+        setTimeout(mostrarFinal, 300); // Pequeño retraso visual
         return;
     }
 

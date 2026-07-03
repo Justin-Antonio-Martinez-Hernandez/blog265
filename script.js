@@ -1,21 +1,21 @@
 const preguntas = [
-    { p: "¿Cuál fue el primer juego que intenté crear?", o: ["Hallucinations", "Void Engine", "Pixel Wars", "Missions"], r: 0 },
-    { p: "¿Qué es algo que siempre digo que voy a terminar?", o: ["La animación de JJK", "Un servidor de Discord", "Un juego RPG", "Un mapa de Minecraft"], r: 0 },
-    { p: "¿Qué personaje uso más en Free Fire?", o: ["Kassie", "Alok", "Hayato", "Kelly"], r: 0 },
-    { p: "¿Qué cosa siempre digo que voy a aprender, pero sigo posponiendo?", o: ["Temas de física de universidad", "Programación avanzada", "Inglés fluido", "Dibujo digital"], r: 0 },
-    { p: "¿Cuál ha sido el bug más raro que me ha pasado?", o: ["Una animación no se reproducía aunque estaba bien configurada", "El juego se cerraba sin error", "Un objeto atravesaba todo", "El personaje flotaba sin razón"], r: 0 },
-    { p: "¿Qué proyecto abandoné pero todavía me gustaría retomar?", o: ["Missions", "Project Void", "Skyline ARG", "Neon Story"], r: 0 },
-    { p: "¿Qué canción he repetido tantas veces que ya me la sé de memoria?", o: ["505", "Blinding Lights", "Faded", "Sweater Weather"], r: 0 },
-    { p: "¿Cuál es mi meta más grande en la vida?", o: ["Ganar un Premio Nobel de Física", "Crear un estudio de juegos", "Ser famoso en internet", "Trabajar en Google"], r: 0 },
-    { p: "¿Qué profesión me gustaría tener si todo sale como espero?", o: ["Astrofísico", "Ingeniero de software", "Game developer", "Investigador"], r: 0 },
-    { p: "¿Qué teoría física me parece más interesante?", o: ["Relatividad de Einstein", "Mecánica cuántica", "Teoría de cuerdas", "Termodinámica"], r: 0 },
-    { p: "¿Qué habilidad me gustaría dominar este año?", o: ["Hacer cálculos mentalmente", "Dibujar", "Programar más rápido", "Aprender japonés"], r: 0 },
-    { p: "¿Cómo prefiero trabajar?", o: ["Solo (a menos que el equipo sea muy bueno)", "Siempre en equipo", "Siempre solo", "Depende del día"], r: 0 },
-    { p: "¿Qué me gustaría dejar como legado?", o: ["Una teoría física que explique algo del universo", "Un juego famoso", "Una empresa grande", "Una comunidad de desarrolladores"], r: 0 },
-    { p: "¿Qué elegiría: saber todas las respuestas o hacer todas las preguntas correctas?", o: ["Saber todas las respuestas", "Hacer todas las preguntas correctas", "Ninguna, prefiero descubrirlo solo", "Depende del momento"], r: 0 },
-    { p: "¿Qué haría si despertara con un IQ de 300?", o: ["Aprovecharía todo para aprender y descubrir cosas", "Me volvería millonario rápido", "Haría juegos perfectos", "Resolvería problemas del mundo"], r: 0 },
-    { p: "¿Qué pregunta del universo me gustaría responder?", o: ["¿Por qué existe el universo en lugar de no existir nada?", "¿Qué hay después de la muerte?", "¿Qué hay dentro de un agujero negro?", "¿Estamos solos en el universo?"], r: 0 },
-    { p: "¿Qué significa 'Tide' para mí?", o: ["Es mi apodo", "Es un proyecto", "Es un personaje", "Es una marca"], r: 0 }
+    { p: "¿Cuál fue el primer juego que intenté crear?", o: ["Void Engine", "Pixel Wars", "Hallucinations", "Project Genesis"], r: 2 },
+    { p: "¿Qué es algo que siempre digo que voy a terminar?", o: ["El motor gráfico en C++", "La animación de JJK", "El guion del ARG", "Un clon de Hollow Knight"], r: 1 },
+    { p: "¿Qué personaje uso más en Free Fire?", o: ["Moco", "Hayato", "Alok", "Kassie"], r: 3 },
+    { p: "¿Qué cosa siempre digo que voy a aprender, pero sigo posponiendo?", o: ["Modelado 3D en Blender", "Cálculo multivariable", "C++ avanzado", "Temas de física de universidad"], r: 3 },
+    { p: "¿Cuál ha sido el bug más raro que me ha pasado?", o: ["El motor de físicas colapsaba al fotograma 60", "Una animación no se reproducía aunque estaba bien configurada", "Los shaders invertían los canales RGB al compilar", "La memoria se llenaba por un bucle invisible"], r: 1 },
+    { p: "¿Qué proyecto abandoné pero todavía me gustaría retomar?", o: ["Project Void", "Missions", "Neon Story", "CyberCore"], r: 1 },
+    { p: "¿Qué canción he repetido tantas veces que ya me la sé de memoria?", o: ["Sweater Weather", "Do I Wanna Know?", "505", "Rhinestone Eyes"], r: 2 },
+    { p: "¿Cuál es mi meta más grande en la vida?", o: ["Fundar el próximo OpenAI", "Desarrollar una IA con conciencia", "Ganar un Premio Nobel de Física", "Dirigir un laboratorio en el CERN"], r: 2 },
+    { p: "¿Qué profesión me gustaría tener si todo sale como espero?", o: ["Físico de partículas", "Astrofísico", "Ingeniero aeroespacial", "Desarrollador de sistemas cuánticos"], r: 1 },
+    { p: "¿Qué teoría física me parece más interesante?", o: ["Mecánica cuántica", "Teoría de cuerdas", "Gravedad cuántica de bucles", "Relatividad de Einstein"], r: 3 },
+    { p: "¿Qué habilidad me gustaría dominar este año?", o: ["Lectura rápida de papers", "Hacer cálculos mentalmente", "Cálculo tensorial", "Dominio absoluto de shaders"], r: 1 },
+    { p: "¿Cómo prefiero trabajar?", o: ["Siempre en equipo", "Totalmente solo en mi cuarto", "Solo (a menos que el equipo sea muy bueno)", "Liderando un equipo de desarrollo"], r: 2 },
+    { p: "¿Qué me gustaría dejar como legado?", o: ["Un motor de código abierto revolucionario", "Un videojuego de culto aclamado", "Una teoría física que explique algo del universo", "Un algoritmo matemático inquebrantable"], r: 2 },
+    { p: "¿Qué elegiría: saber todas las respuestas o hacer todas las preguntas correctas?", o: ["Hacer todas las preguntas correctas", "Saber todas las respuestas", "Ninguna, prefiero deducirlo desde cero", "Controlar la aleatoriedad cuántica"], r: 1 },
+    { p: "¿Qué haría si despertara con un IQ de 300?", o: ["Resolver las ecuaciones de Navier-Stokes", "Hackear la base de datos de la NASA", "Aprovecharía todo para aprender y descubrir cosas", "Diseñar una teoría del todo antes del almuerzo"], r: 2 },
+    { p: "¿Qué pregunta del universo me gustaría responder?", o: ["¿Qué ocurre en la singularidad de un agujero negro?", "¿Cómo unificar la gravedad con la cuántica?", "¿Por qué existe el universo en lugar de no existir nada?", "¿Cuál es el destino final del espacio-tiempo?"], r: 2 },
+    { p: "¿Qué significa 'Tide' para mí?", o: ["Es un concepto para un juego", "Es mi apodo", "Es el nombre de un motor gráfico", "Es una abreviación científica"], r: 1 }
 ];
 
 let i = 0;
@@ -25,7 +25,6 @@ let seleccion = -1;
 function comenzar() {
     const nombreInput = document.getElementById("nombre");
     
-    // Validar que no dejen el nombre vacío
     if (!nombreInput.value.trim()) {
         nombreInput.style.borderColor = "#ff2d55";
         setTimeout(() => nombreInput.style.borderColor = "#ddd", 1500);
@@ -40,16 +39,14 @@ function comenzar() {
 function mostrar() {
     const q = preguntas[i];
     
-    // Actualizar barra de progreso
     const progreso = ((i) / preguntas.length) * 100;
     document.getElementById("progress-bar").style.width = progreso + "%";
 
-    // Mostrar pregunta con indicador numérico
     document.getElementById("pregunta").innerHTML = 
         `<span style="color:#6c63ff; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px;">Pregunta ${i + 1} de ${preguntas.length}</span><br><br>${q.p}`;
 
     let html = "";
-    seleccion = -1; // Resetear selección
+    seleccion = -1; 
     document.getElementById("error-msg").classList.add("hidden");
 
     q.o.forEach((op, index) => {
@@ -61,8 +58,6 @@ function mostrar() {
 
 function select(index, el) {
     seleccion = index;
-    
-    // Ocultar mensaje de error si escogen una opción
     document.getElementById("error-msg").classList.add("hidden");
 
     document.querySelectorAll(".opcion").forEach(x => {
@@ -73,7 +68,6 @@ function select(index, el) {
 }
 
 function siguiente() {
-    // Validar si seleccionaron algo
     if (seleccion === -1) {
         document.getElementById("error-msg").classList.remove("hidden");
         return;
@@ -86,9 +80,8 @@ function siguiente() {
     i++;
 
     if (i >= preguntas.length) {
-        // Llenar la barra al 100% al finalizar
         document.getElementById("progress-bar").style.width = "100%";
-        setTimeout(mostrarFinal, 300); // Pequeño retraso visual
+        setTimeout(mostrarFinal, 300); 
         return;
     }
 
